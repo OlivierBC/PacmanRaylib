@@ -1,14 +1,31 @@
 ﻿using Raylib_cs;
 
-Raylib.InitWindow(800, 600, "Raylib CS");
-Raylib.SetTargetFPS(60);
-
-while (!Raylib.WindowShouldClose())
+class Program
 {
-    Raylib.BeginDrawing();
-    Raylib.ClearBackground(Color.Black);
-    Raylib.DrawText("Raylib Base Project", 20, 20, 20, Color.White);
-    Raylib.EndDrawing();
-}
+    static void Main()
+    {
+        const int tileSize = 24;
+        const int mapWidth = 28;
+        const int mapHeight = 31;
 
-Raylib.CloseWindow();
+        int screenWidth = mapWidth * tileSize;
+        int screenHeight = mapHeight * tileSize;
+
+        Raylib.InitWindow(screenWidth, screenHeight, "Pacman Grid");
+        Raylib.SetTargetFPS(60);
+
+        Game game = new Game();
+
+        while (!Raylib.WindowShouldClose())
+        {
+            game.Update();
+
+            Raylib.BeginDrawing();
+            Raylib.ClearBackground(Color.Black);
+            game.Draw();
+            Raylib.EndDrawing();
+        }
+
+        Raylib.CloseWindow();
+    }
+}
