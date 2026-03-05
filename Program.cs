@@ -4,14 +4,7 @@ class Program
 {
     static void Main()
     {
-        const int tileSize = 24;
-        const int mapWidth = 28;
-        const int mapHeight = 31;
-
-        int screenWidth = mapWidth * tileSize;
-        int screenHeight = mapHeight * tileSize;
-
-        Raylib.InitWindow(screenWidth, screenHeight, "Pacman Grid");
+        Raylib.InitWindow(Global.ScreenWidth, Global.ScreenHeight, "Pacman");
         Raylib.SetTargetFPS(60);
 
         Game game = new Game();
