@@ -1,5 +1,9 @@
 # Pacman (Raylib C#)
 
+## Demo
+
+![Pacman Gameplay](demo.gif)
+
 A simple Pac-Man clone written in **C# using Raylib-cs**.
 
 This project was built as a small learning project to practice: - game
